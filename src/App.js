@@ -1,25 +1,45 @@
 import logo from './logo.svg';
 import './App.css';
+import Cardfun from './Components/Cardfun';
+import Cardcls from './Components/Cardcls';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+         msg:false,
+         msg2:false
+    }  
 }
 
-export default App;
+showfun=()=>{
+  this.setState({msg:!this.state.msg})
+}
+
+showcls=()=>{
+  this.setState({msg2:!this.state.msg2})
+}
+  render() {
+    return (
+      <div className="App">
+     <h1>Styling using Functional and Class Component</h1>
+     <button className='btn' onClick={this.showfun}>To see styling in functional component</button>
+     <button className='btn' onClick={this.showcls}>To see styling in class component</button>
+
+     <div className='mymaindiv'>
+      {
+        this.state.msg?<Cardfun/>:null
+      }
+       {
+        this.state.msg2?<Cardcls/>:null
+      }
+    </div>
+    </div>
+    )
+  }
+}
+export default App
+

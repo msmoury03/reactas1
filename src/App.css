@@ -1,3 +1,26 @@
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(72, 180, 190)), to(#a8c552)) fixed;
+}
+
+.btn{
+  border: none;
+  background-color: rgb(128, 77, 195);
+  border-radius: 20px;
+  padding: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  margin: 30px;
+  color: white;
+  border: 2px solid black;
+}
+
+.mymaindiv{
+  display: flex;
+  justify-content: center;
+}
+
+
 .App {
   text-align: center;
 }
